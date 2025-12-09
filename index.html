@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.Tech Custom SGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator-container">
+    <h1>B.Tech SGPA Calculator</h1>
+    <div class="controls">
+      <label for="branch-select">Select Branch:</label>
+      <select id="branch-select">
+        <option value="">-- Choose Branch --</option>
+        <option value="IT">Information Technology (IT)</option>
+        <option value="CSE">Computer Science & Engineering (CSE)</option>
+        <option value="ECE">Electronics & Communication Engineering (ECE)</option>
+      </select>
+
+      <label for="semester-select">Select Semester:</label>
+      <select id="semester-select">
+        <option value="">-- Choose Semester --</option>
+      </select>
+    </div>
+
+    <div id="course-input-section" style="display: none;">
+      <h2>Subject Details</h2>
+      <form id="calculator-form">
+        <div class="table-header">
+          <span class="col-name">Course</span>
+          <span class="col-credits">Credits</span>
+          <span class="col-ca">Your CA (Max 50/75)</span>
+          <span class="col-ue">Your UE (Max 100/75)</span>
+          <span class="col-grade">Grade</span>
+          <span class="col-gp">GP</span>
+        </div>
+        <div id="courses-list"></div>
+      </form>
+
+      <button id="calculate-btn">Calculate SGPA</button>
+      <div id="results-section" class="results-box">
+        <h3>SGPA Result: <span id="sgpa-result">--</span></h3>
+        <p>Total Credits: <span id="total-credits">--</span></p>
+        <p id="fail-warning" style="color: red;"></p>
+      </div>
+
+      <div class="target-section">
+        <h2>Target SGPA Calculator</h2>
+        <label for="target-sgpa">Target SGPA (e.g., 9.0):</label>
+        <input type="number" id="target-sgpa" min="5.5" max="10" step="0.1" value="9.0">
+        <button id="target-calculate-btn">Calculate Required Marks</button>
+        <div id="target-results" class="results-box">
+          <p>Select a single pending subject using the radio buttons next to the subject inputs above.</p>
+          <p>Minimum UE Mark Needed: <span id="min-ue-needed">--</span></p>
+          <p id="target-unreachable" style="color: red;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
